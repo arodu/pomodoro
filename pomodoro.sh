@@ -3,7 +3,7 @@
 # This is a simple script for pomodoro timer.
 # This is intended to be used with xfce4-genmon-plugin.
 
-size=24		# Icon size in pixels
+size=16		# Icon size in pixels
 pomodoro_time=25	# Time for the pomodoro cycle (in minutes)
 short_break_time=5	# Time for the short break cycle (in minutes)
 long_break_time=15	# Time for the long break cycle (in minutes)
@@ -150,9 +150,9 @@ else
 
 			fi
 
-			aplay "$DIR/cow.wav"
+      aplay "$DIR/ding.wav" &
 			xnotify "$msg"
-			zenity --info --text="$msg"
+			zenity --info --text="$msg" --no-wrap
 			echo "$current_time" > "$savedtime"
 
 		else
